@@ -39,6 +39,7 @@ bin/poundcontrol
 bin/poundctl
 bin/poundrun
 bin/zopepy
+log
 log/cleanup.log
 log/update.log
 log/cache.log
