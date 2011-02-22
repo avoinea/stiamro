@@ -1,0 +1,38 @@
+<div class="portlet">
+
+<div class="insights" tal:define="
+  tab python:view.context;
+  tabid python:tab.__name__;
+  tabtitle python:tab.title;
+  taburl tab/@@absolute_url;
+  news python:view.news();
+  length python:news.next()" tal:condition="length">
+  <ul>
+    <li tal:repeat="newsitem news">
+      <div class="right-image">
+        <a tal:define="icon python:view.thumbnail(newsitem);"
+          tal:condition="icon" tal:attributes="
+            class string:fancy-$tabid;
+            rel string:$tabid-right-image;
+            href string:$icon;
+            title python:newsitem.title;">
+          <img tal:attributes="
+            src string:$icon/@@scale/album;
+            title python:newsitem.title;
+            alt python:newsitem.title;" />
+        </a>
+      </div>
+      <div class="right-link">
+        <a tal:content="python:newsitem.title[:65] + '...'"
+        tal:attributes="
+          rel string:$tabid-right;
+          ajax python:view.relative_id(newsitem);
+          href newsitem/@@absolute_url;
+          title python:newsitem.title;" />
+        <span style="display:none" tal:content="newsitem/@@absolute_url" />
+      </div>
+    </li>
+  </ul>
+</div>
+
+</div>

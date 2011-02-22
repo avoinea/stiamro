@@ -1,0 +1,8 @@
+<metal:block use-macro="context/@@standard_macros/page"
+  i18n:domain="stiam">
+  <div metal:fill-slot="body" class="page-body" id="page-body">
+    <h1 class="page-title" tal:define="title python:'Revista presei romanesti'"
+      tal:content="title" tal:condition="title" />
+    <tal:body replace="structure python:view.insights()" />
+  </div>
+</metal:block>

@@ -1,0 +1,9 @@
+<tal:newsitems define="
+  items python:view.items;
+  length python:items.next()" tal:condition="length">
+  <tal:newsitem tal:repeat="item items">
+    <tal:item
+      define="content nocall:item/@@content.html"
+      replace="structure python:content(cuttext=50)" />
+  </tal:newsitem>
+</tal:newsitems>

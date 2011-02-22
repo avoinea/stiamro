@@ -1,0 +1,70 @@
+<div id="current-time" style="display: none" tal:content="python:view.now" />
+
+<div id="logo" class="logo">
+  <a tal:attributes="href string:/">
+    <img tal:attributes="
+      title string:stiam.ro;
+      alt string:stiam.ro;
+      src context/++resource++www/logo.png;" />
+  </a>
+</div>
+
+<div id="google_search" class="google_search">
+<div id="cse-search-form" style="width: 100%;">Cautare</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+  google.load('search', '1', {language : 'ro'});
+  google.setOnLoadCallback(function(){
+    var customSearchControl = new google.search.CustomSearchControl('004449198452853041109:v7w7ryt5boa');
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    var options = new google.search.DrawOptions();
+    options.setSearchFormRoot('cse-search-form');
+    customSearchControl.draw('cse', options);
+  }, true);
+//-->
+</script>
+</div>
+
+<div id="right_buttons" class="right_buttons">
+  <ul>
+    <li class="twitter">
+      <a href="http://twitter.com/stiamro"
+        target="_blank"
+        title="stiam.ro pe Twitter">
+        <img src="/@@/www/twitter.png" title="stiam.ro pe Twitter" alt="Twitter" />
+      </a>
+    </li>
+    <li class="twitter">
+      <a href="http://facebook.com/stiam.ro"
+        target="_blank"
+        title="stiam.ro pe Facebook">
+        <img src="/@@/www/facebook.png" title="stiam.ro pe Facebook" alt="Facebook" />
+      </a>
+    </li>
+    <li class="twitter">
+      <a href="http://www.google.com/profiles/109437611301962722443"
+        target="_blank"
+        title="stiam.ro pe Google">
+        <img src="/@@/www/google.png" title="stiam.ro pe Google" alt="Google" />
+      </a>
+    </li>
+    <li class="igoogle">
+      <a href="http://www.google.com/ig/sharetab?source=stb&stid=1131730609066954350768294a7c58dab1cff27e7281f042f10b4"
+        target="_blank"
+        title="stiam.ro pe iGoogle">
+        <img src="/@@/www/igoogle.png" title="stiam.ro pe iGoogle" alt="iGoogle" />
+      </a>
+    </li>
+    <li class="mobile">
+      <a href="http://m.stiam.ro" title="stiam.ro pe mobil">
+        <img src="/@@/www/mobile.png" title="stiam.ro pe mobil" alt="Mobil" />
+      </a>
+    </li>
+    <li class="rss">
+      <a href="/flux.html" title="Flux RSS stiam.ro">
+        <img src="/@@/www/atom.png" title="Flux RSS stiam.ro" alt="RSS" />
+      </a>
+    </li>
+  </ul>
+</div>

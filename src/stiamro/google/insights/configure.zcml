@@ -1,0 +1,49 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <class class=".content.Insights">
+    <require
+      interface=".interfaces.IInsights"
+      permission="zope.View" />
+    <require
+      set_schema=".interfaces.IInsights"
+      permission="zope.ManageContent" />
+  </class>
+
+  <browser:addMenuItem
+    title="Google Insights"
+    description="Google insights"
+    class=".content.Insights"
+    for="*"
+    permission="zope.ManageContent" />
+
+  <browser:page name="edit.html" class=".browser.EditPage"
+    for=".interfaces.IInsights"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.ManageContent" />
+
+  <browser:page name="content.html"
+    for=".interfaces.IInsights"
+    class=".browser.View"
+    template="content.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:page name="insights.portlet"
+    for=".interfaces.IInsights"
+    template="portlet.pt"
+    class=".browser.Portlet"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:icon
+    name="zmi_icon"
+    for=".interfaces.IInsights"
+    file="icon.png"
+  />
+
+</configure>

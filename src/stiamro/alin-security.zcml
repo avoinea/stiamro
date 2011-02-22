@@ -1,0 +1,17 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+  i18n_domain="learningjourney">
+
+  <permission id="stiam.ro.ModifyContent" title="stiam.ro: Modify Content" />
+  <role id="stiam.ro.Owner" title="Owner" />
+  <grant permission="stiam.ro.ModifyContent" role="stiam.ro.Owner" />
+
+  <!-- Initial administrator account.  Disable this for production -->
+  <principal id="zope.manager" title="Manager" login="alin"
+    password_manager="Plain Text" password="alin" />
+
+  <role id="zope.Manager" title="Site Manager" />
+  <role id="zope.Member" title="Site Member" />
+  <grant role="zope.Manager" principal="zope.manager" />
+  <grantAll role="zope.Manager" />
+
+</configure>

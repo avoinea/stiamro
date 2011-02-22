@@ -1,0 +1,7 @@
+#!/bin/sh
+bin/memcached start && \
+bin/poundctl start && \
+bin/server start && \
+bin/instance1 start && \
+bin/instance2 start && \
+bin/instance3 start

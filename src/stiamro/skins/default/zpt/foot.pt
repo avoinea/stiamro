@@ -1,0 +1,21 @@
+<script type="text/javascript" src="http://cdn.jquerytools.org/1.2.2/full/jquery.tools.min.js"></script>
+<script type="text/javascript" tal:define="
+  started python:view.started;
+  resource context/++resource++js/stiam.pack.js"
+  tal:attributes="src string:$resource?cache=$started"></script>
+
+<!-- Google Analytics -->
+<tal:google define="
+  url context/@@absolute_url;
+  is_local python:'stiam.ro' not in url[:20]"
+  tal:condition="not:is_local">
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10574661-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</tal:google>

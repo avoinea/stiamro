@@ -1,0 +1,26 @@
+<div id="cse" class="google-results"></div>
+<!--[if lt IE 7]>
+<div class="ie_error">
+  <div>
+    <strong>Inca mai folosesti Internet Explorer 6?</strong>
+    <p>
+      <strong>stiam.ro</strong>
+      <span>ar functiona mult mai bine daca ai trece la</span>
+      <a href="http://www.microsoft.com/windows/products/winfamily/ie/default.mspx"
+        target="_blank">Internet Explorer 8</a>
+      <span>sau la unul din celelalte browsere moderne.</span>
+    </p>
+  </div>
+  <div style="text-align: center">
+    <a href="http://www.microsoft.com/windows/products/winfamily/ie/default.mspx" target="_blank">
+      <img src="/@@/www/ie.png" alt="Descarca Internet Explorer 8" style="border:0;" />
+    </a>
+    <a href="http://www.mozilla-europe.org/en/firefox/" target="_blank">
+      <img src="/@@/www/firefox.png" alt="Descarca Firefox" style="border:0;" />
+    </a>
+    <a href="http://www.apple.com/safari/" target="_blank">
+      <img src="/@@/www/safari.png" alt="Descarca Safari" style="border:0;" />
+    </a>
+  </div>
+</div>
+<![endif]-->

@@ -1,0 +1,8 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser">
+
+  <interface interface=".interfaces.IManageLayer" name="manage"
+    type="zope.publisher.interfaces.browser.IBrowserSkinType" />
+
+</configure>

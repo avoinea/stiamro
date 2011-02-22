@@ -1,0 +1,21 @@
+<metal:block use-macro="context/@@standard_macros/page"
+  i18n:domain="stiam">
+  <div metal:fill-slot="body" class="full-page-body" id="page-body">
+    <h1 class="page-title" tal:define="title python:context.title"
+      tal:content="title" tal:condition="title" />
+    <div tal:replace="structure context/@@breadcrumbs.portlet|string:" />
+    <ul tal:define="items python:view.items" class="album-items">
+      <li tal:repeat="item items" class="n-image">
+        <a tal:define="icon python:view.thumbnail(item);"
+          tal:condition="icon" tal:attributes="
+            href item/@@absolute_url;
+            title python:item.title;">
+          <img tal:attributes="
+            src string:$icon/@@scale/album;
+            title python:item.title;
+            alt python:item.title;" />
+        </a>
+      </li>
+    </ul>
+  </div>
+</metal:block>

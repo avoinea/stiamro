@@ -1,0 +1,10 @@
+.games-section-body {
+  padding: 2em;
+}
+
+.game-thumbnail {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  float: left;
+}

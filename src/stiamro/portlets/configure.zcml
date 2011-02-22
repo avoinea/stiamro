@@ -1,0 +1,28 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <browser:page name="content.portlet"
+    for="..content.interfaces.IContent"
+    template="content.pt"
+    class=".content.ContentPortlet"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:page name="breadcrumbs.portlet"
+    for="stiamro.content.interfaces.IContent"
+    class=".breadcrumbs.Breadcrumbs"
+    template="breadcrumbs.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View" />
+
+  <browser:page name="subtabs.portlet"
+    for="stiamro.content.interfaces.IContent"
+    class=".subtabs.Subtabs"
+    template="subtabs.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View" />
+
+</configure>

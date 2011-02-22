@@ -1,0 +1,12 @@
+<metal:block use-macro="context/@@standard_macros/page" i18n:domain="stiam">
+  <metal:head fill-slot="head">
+    <link rel="image_src"
+     tal:define="thumbnail python:view.thumbnail()"
+     tal:condition="thumbnail"
+     tal:attributes="href thumbnail" />
+  </metal:head>
+  <div metal:fill-slot="body" class="newsitem-body">
+    <div tal:replace="structure context/@@breadcrumbs.portlet|string:" />
+    <tal:newsitems replace="structure context/@@content.html" />
+  </div>
+</metal:block>

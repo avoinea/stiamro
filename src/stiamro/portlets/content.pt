@@ -1,0 +1,40 @@
+<dl tal:define="
+  tab python:view.context;
+  tabid python:tab.__name__;
+  tabtitle python:tab.title;
+  taburl tab/@@absolute_url">
+  <dt>
+    <a tal:content="python:tab.title" tal:attributes="
+      id python:tab.__name__ + '-portlet';
+      href taburl;
+      title tabtitle" />
+  </dt>
+  <dd>
+    <ul>
+      <li tal:repeat="newsitem python:view.news()">
+        <div class="right-image">
+          <a tal:define="icon python:view.thumbnail(newsitem);"
+            tal:condition="icon" tal:attributes="
+              class string:fancy-$tabid;
+              rel string:$tabid-right-image;
+              href string:$icon;
+              title python:newsitem.title;">
+            <img tal:attributes="
+              src string:$icon/@@scale/icon;
+              title python:newsitem.title;
+              alt python:newsitem.title;" />
+          </a>
+        </div>
+        <div class="right-link">
+          <a tal:content="python:newsitem.title"
+          tal:attributes="
+            rel string:$tabid-right;
+            ajax python:view.relative_id(newsitem);
+            href newsitem/@@absolute_url;
+            title python:newsitem.title;" />
+          <span style="display:none" tal:content="newsitem/@@absolute_url" />
+        </div>
+      </li>
+    </ul>
+  </dd>
+</dl>

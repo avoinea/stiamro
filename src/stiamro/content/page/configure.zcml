@@ -1,0 +1,69 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <class class="..page.Page">
+    <require
+      interface="..interfaces.IPage"
+      permission="zope.View" />
+    <require
+      set_schema="..interfaces.IPage"
+      permission="zope.ManageContent" />
+  </class>
+
+  <browser:addMenuItem
+    title="Pagina"
+    description="Pagina de stiri"
+    class="..page.Page"
+    for="*"
+    permission="zope.ManageContent" />
+
+  <browser:page name="add_page.html" class=".browser.PageAddPage"
+    for="..interfaces.ISite"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.ManageContent" />
+
+  <browser:page name="edit.html" class=".browser.PageEditPage"
+    for="..interfaces.IPage"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.ManageContent" />
+
+  <browser:page name="index.html"
+    for="..interfaces.IPage"
+    template="index.pt"
+    class=".browser.PageView"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:page name="index.etag"
+    for="..interfaces.IContent"
+    class=".browser.PageEtag"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:page name="content.html"
+    for="..interfaces.IPage"
+    class=".browser.PageContent"
+    template="content.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:page name="sitemap.xml"
+    for="..interfaces.IPage"
+    class=".browser.PageSitemap"
+    template="sitemap.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:icon
+    name="zmi_icon"
+    for="..interfaces.IPage"
+    file="icon.gif"
+  />
+
+</configure>

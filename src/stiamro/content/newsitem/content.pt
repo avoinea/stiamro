@@ -1,0 +1,80 @@
+<div class="newsitem" tal:define="
+  url context/@@absolute_url;
+  cuttext python:getattr(view, 'cuttext', None);
+  title python:view.title">
+  <h1 class="n-title" tal:condition="not:cuttext">
+    <span class="n-byline"
+      tal:content="python:view.date" />
+    <a class="n-link"
+     tal:attributes="
+      href url;
+      ajax python:view.relative_id;
+      title title"
+      tal:content="title" />
+    <span class="n-local"
+      style="display:none" tal:content="url" />
+  </h1>
+
+  <h2 class="n-title" tal:condition="cuttext">
+    <span class="n-byline"
+      tal:content="python:view.date" />
+    <a class="n-link"
+     tal:attributes="
+      href url;
+      ajax python:view.relative_id;
+      title title"
+      tal:content="title" />
+    <span class="n-local"
+      style="display:none" tal:content="url" />
+  </h2>
+
+  <div class="n-image" tal:define="
+    name string:content;
+    thumb python:view.thumbnail(context, 'thumbnail')"
+    tal:condition="thumb">
+    <a tal:attributes="
+      class string:fancy-$name;
+      rel string:fancy-$name;
+      title title;
+      href string:${thumb}">
+      <img tal:attributes="
+          src string:${thumb}/@@scale/album;
+          alt title;
+          title title" />
+    </a>
+  </div>
+  <div class="n-content">
+    <h2 tal:content="structure python:view.description" tal:condition="not:cuttext"/>
+    <h3 tal:content="structure python:view.description" tal:condition="cuttext"/>
+  </div>
+  <div class="n-underline">
+    <div class="n-share">
+      <a title="Adaugă ştire pe facebook" target="_blank"
+        tal:attributes="href string:http://www.facebook.com/sharer.php?u=$url&t=$title">
+        <img src="/@@/www/facebook.png"
+          alt="facebook" title="Adaugă ştire pe facebook" />
+      </a>
+      <a title="Adaugă ştire pe twitter" target="_blank"
+        tal:attributes="href string:http://twitter.com/home?status=$url">
+        <img src="/@@/www/twitter.png"
+          title="Adaugă ştire pe twitter" alt="Twitter" />
+      </a>
+      <a title="Adaugă ştire pe Google Buzz" target="_blank"
+        tal:attributes="href string:http://google.com/buzz/post?url=$url&title=$title">
+        <img title="Adaugă ştire pe Google Buzz" alt="buzz"
+          src="/@@/www/buzz.png" />
+      </a>
+    </div>
+    <div class="n-url" tal:define="
+      icon python:view.favicon;
+      klass python:icon and 'background-image: url(%s)' % icon or ''"
+      tal:attributes="style python:klass">
+      <a tal:attributes="
+        target string:_blank;
+        href python:context.url;
+        title title;">
+        <span>Citeşte articol</span>
+      </a>
+    </div>
+  </div>
+</div>

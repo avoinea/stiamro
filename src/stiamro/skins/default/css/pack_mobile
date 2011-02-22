@@ -1,0 +1,2 @@
+#!/bin/sh
+java -jar ../../../bin/yuic mobile.css -o mobile.pack.css

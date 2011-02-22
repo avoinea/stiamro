@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc tal:content="string:${context/@@absolute_url}/sitemap.xml" />
+    <lastmod tal:content="python:view.lastmodified(context['general'])" />
+  </sitemap>
+  <sitemap tal:repeat="tab python:view.tabs">
+    <loc tal:content="string:${tab/@@absolute_url}/sitemap.xml" />
+    <lastmod tal:content="python:view.lastmodified(tab)" />
+  </sitemap>
+</sitemapindex>

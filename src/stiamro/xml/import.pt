@@ -1,0 +1,18 @@
+<metal:block use-macro="context/@@standard_macros/page"
+  i18n:domain="stiam">
+  <div metal:fill-slot="body">
+    <fieldset>
+      <legend>Import children structure from XML</legend>
+      <form action="import.xml"  method="post" enctype="multipart/form-data">
+        <div class="field">
+          <input type="file" name="xmlfile" id="xmlfile"/>
+        </div>
+        <div class="field">
+          <input type="submit" value="Import" name="import"/>
+          <span style="color: green" tal:condition="python:view.status"
+            tal:content="python:view.status" />
+        </div>
+      </form>
+    </fieldset>
+  </div>
+</metal:block>

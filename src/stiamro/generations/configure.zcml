@@ -1,0 +1,45 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <utility
+    component=".StiamSchemaManager"
+    name="stiam.ro" />
+
+  <!--<browser:page name="reindex.html" class=".reindex.ReindexSource"-->
+    <!--for="stiamro.content.interfaces.ISource"-->
+    <!--layer="stiamro.skins.interfaces.IManageLayer"-->
+    <!--permission="zope.ManageContent" />-->
+
+  <!--<browser:page name="reindex.html" class=".reindex.ReindexServer"-->
+    <!--for="stiamro.content.interfaces.IServer"-->
+    <!--layer="stiamro.skins.interfaces.IManageLayer"-->
+    <!--permission="zope.ManageContent" />-->
+
+  <!--<browser:page name="reindex.html" class=".reindex.ReindexNews"-->
+    <!--for="stiamro.content.interfaces.INews"-->
+    <!--layer="stiamro.skins.interfaces.IManageLayer"-->
+    <!--permission="zope.ManageContent" />-->
+
+  <browser:page name="setup.html" class=".setup.Setup"
+    for="stiamro.content.interfaces.ISite"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.ManageContent" />
+
+  <browser:page name="reindex-index.html" class=".reindex.ReindexBySourcesIndex"
+    for="stiamro.content.interfaces.ISite"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.ManageContent" />
+
+  <!--<browser:page name="updater.html" class=".updater.Update"-->
+    <!--for="stiamro.content.interfaces.ISite"-->
+    <!--layer="stiamro.skins.interfaces.IManageLayer"-->
+    <!--permission="zope.ManageContent" />-->
+
+  <!--<browser:page name="evolve-images.html" class=".cleanup.Cleanup"-->
+    <!--for="stiamro.content.interfaces.ISite"-->
+    <!--layer="stiamro.skins.interfaces.IManageLayer"-->
+    <!--permission="zope.ManageContent" />-->
+
+</configure>

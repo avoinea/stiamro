@@ -1,0 +1,54 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <class class="..server.Server">
+    <require
+      interface="..interfaces.IServer"
+      permission="zope.View" />
+    <require
+      set_schema="..interfaces.IServer"
+      permission="zope.ManageContent" />
+  </class>
+
+  <browser:addMenuItem
+    title="Server"
+    description="Provider stiri"
+    class="..server.Server"
+    for="*"
+    permission="zope.ManageContent" />
+
+  <browser:page name="add_server.html" class=".browser.ServerAddPage"
+    for="..interfaces.ISource"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.ManageContent" />
+
+  <browser:page name="edit.html" class=".browser.ServerEditPage"
+    for="..interfaces.IServer"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.ManageContent" />
+
+  <browser:page name="index.html"
+    for="..interfaces.IServer"
+    template="index.pt"
+    class=".browser.ServerView"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:page name="content.html"
+    for="..interfaces.IServer"
+    class=".browser.ServerContent"
+    template="content.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:icon
+    name="zmi_icon"
+    for="..interfaces.IServer"
+    file="icon.gif"
+  />
+
+</configure>

@@ -1,0 +1,104 @@
+<metal:block xmlns:metal="http://xml.zope.org/namespaces/metal" metal:define-macro="page"
+><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:tal="http://xml.zope.org/namespaces/tal">
+<head>
+  <!-- Headers -->
+  <tal:providers replace="structure provider:stiam.Head" />
+  <metal:head define-slot="head"></metal:head>
+</head>
+<body>
+<div id="background" class="background">
+
+<div id="page" class="page">
+  <!-- Portal header -->
+  <div id="header" class="header">
+    <tal:providers replace="structure provider:stiam.Header" />
+  </div>
+
+  <!-- Portal toolbar -->
+  <div id="toolbar" class="toolbar">
+    <tal:providers replace="structure provider:stiam.ToolbarTop" />
+    <tal:providers replace="structure provider:stiam.ToolbarBottom" />
+  </div>
+
+  <!-- Content -->
+  <div id="content" class="content">
+    <!-- Body -->
+    <div id="body" class="body">
+      <!-- Content top -->
+      <div id="body-content" class="body-content">
+        <div id="content-top" class="content-top">
+          <tal:providers replace="structure provider:stiam.ContentTop" />
+        </div>
+        <!-- Content body -->
+        <div id="content-body" class="content-body">
+          <metal:body define-slot="body">Body goes here</metal:body>
+        </div>
+        <!-- Content bottom -->
+        <div id="content-bottom" class="content-bottom">
+          <tal:providers replace="structure provider:stiam.ContentBottom" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Right bar -->
+    <div id="sidebar" class="sidebar">
+      <tal:providers replace="structure provider:stiam.Sidebar" />
+    </div>
+
+    <div style="clear: both"> </div>
+  </div>
+  
+  <div style="text-align: center; padding-top: 1em;">
+
+    <a href="http://www.federal.ro/stiri-mass-media/" title="Stiri" target="_blank" ><img src="http://www.federal.ro/parteneri/fedbutt.gif" width="88" height="31" border="0" alt="Stiri" /></a>
+
+    <a href="http://www.cere.ro/" target="cere_portal" class="lista_dir"><img src="http://linkuri.cere.ro/images/cere_4.gif" alt="www.cere.ro" width="88" height="31" border="0"></a>
+
+
+<!-- script statistics.ro : V2 : html-easy -->
+<script type="text/javascript" src="http://hitx.statistics.ro/hitx2.js"></script>
+<a href="http://www.wta.ro/1151stats_index" target="_blank" title="Statistici web"><script type="text/javascript">
+st_ro_start(1151, "", "", "");</script></a>
+<noscript><a href="http://www.wta.ro/"><img src="http://hitx.statistics.ro/1151/1/-/-/-/a-x/nojs.gif" width="88" height="31" alt="Statistici web"></a></noscript>
+<!-- end of script statistics.ro : V2 : html-easy -->
+
+
+<!--/Start async trafic.ro/-->
+<script type="text/javascript" id="trfc_trafic_script">
+//<![CDATA[
+t_rid = 'stiam-ro';
+(function(){ t_js_dw_time=new Date().getTime();
+t_js_load_src=((document.location.protocol == 'http:')?'http://storage.':'https://secure.')+'trafic.ro/js/trafic.js?tk='+(Math.pow(10,16)*Math.random())+'&t_rid='+t_rid;
+if (document.createElement && document.getElementsByTagName && document.insertBefore) {
+t_as_js_en=true;var sn = document.createElement('script');sn.type = 'text/javascript';sn.async = true; sn.src = t_js_load_src;
+var psn = document.getElementsByTagName('script')[0];psn.parentNode.insertBefore(sn, psn); } else {
+document.write(unescape('%3Cscri' + 'pt type="text/javascript" '+'src="'+t_js_load_src+';"%3E%3C/sc' + 'ript%3E')); }})();
+//]]>
+</script>
+<noscript><p><a href="http://stat.trafic.ro/stat/stiam-ro"><img alt="stiam.ro" src="http://log.trafic.ro/cgi-bin/pl.dll?rid=stiam-ro" /></a> <a href="http://www.trafic.ro">trafic.ro</a></p></noscript>
+<!--/End async trafic.ro/-->
+
+<br />
+
+    <a href="http://www.addsite.ro/Massmedia/Stiri/" title="Stiri">Director stiri</a>                                                               
+    <span>|</span>                                                                                                                                  
+    <a href="http://director.orasultau.ro/" target="_blank" title="director web">Director Web</a>
+    <span>|</span>
+    <a href="http://www.webhosting4.net/billing/aff.php?aff=030" target="_blank" title="Gazduire Web, Reseller Hosting, Inregistrare DOMENII">WebHosting4.net</a>
+
+  </div>
+  
+  <div id="footer" class="footer">
+    <tal:providers replace="structure provider:stiam.Footer" />
+  </div>
+</div>
+
+</div>
+<!-- Javascript -->
+<tal:providers replace="structure provider:stiam.Foot" />
+</body>
+</html>
+</metal:block>

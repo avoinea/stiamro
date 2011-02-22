@@ -1,0 +1,23 @@
+<configure xmlns="http://namespaces.zope.org/browser"
+  i18n_domain="learningjourney">
+
+  <page name="login_macros"
+    for="*"
+    template="pt/macros.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.Public" />
+
+  <page name="login.html"
+    class=".page.LoginPage"
+    template="pt/login.pt"
+    for="stiamro.content.interfaces.ISite"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View" />
+
+  <page name="logout.html"
+    class=".page.LogoutPage"
+    for="stiamro.content.interfaces.ISite"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View" />
+
+</configure>

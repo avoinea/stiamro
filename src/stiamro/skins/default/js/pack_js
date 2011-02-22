@@ -1,0 +1,6 @@
+#!/bin/sh
+cat stiam.js \
+    > all.js && \
+java -jar ../../../bin/yuic all.js -o stiam.pack.js && \
+rm all.js
+

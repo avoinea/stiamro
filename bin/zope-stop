@@ -1,0 +1,7 @@
+#!/bin/sh
+bin/memcached stop && \
+bin/poundctl stop && \
+bin/server stop && \
+bin/instance1 stop && \
+bin/instance2 stop && \
+bin/instance3 stop

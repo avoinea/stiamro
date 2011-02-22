@@ -1,0 +1,27 @@
+<div metal:define-macro="login_form">
+
+  <div tal:condition="python:request.principal.id == 'zope.anybody'">
+    <h2>Login</h2>
+    <form method="POST" action=".">
+      <input type="text" name="login" value="user" onclick="this.value=''" />
+      <input type="password" name="password" value="password" onclick="this.value=''" />
+      <input type='submit' value="Login" />
+    </form>
+    <p>
+      <a tal:attributes="href string:${context/@@site_url}/@@register.html">Register</a>
+    </p>
+  </div>
+
+  <div tal:condition="python:request.principal.id != 'zope.anybody'">
+    <h2>Account info</h2>
+    <p i18n:translate="">
+      Hello,
+      <span tal:replace="request/principal/title" i18n:name="user_title">User
+      </span>
+    </p>
+    <p>
+      <a href="" tal:attributes="href string:${context/@@site_url}/@@logout.html">Logout</a>
+    </p>
+  </div>
+
+</div>

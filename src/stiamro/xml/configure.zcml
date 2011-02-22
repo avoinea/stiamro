@@ -1,0 +1,17 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <browser:page name="export.xml" class=".browser.Export"
+    for="stiamro.content.interfaces.IContent"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.ManageContent" />
+
+  <browser:page name="import.xml" class=".browser.Import"
+    for="stiamro.content.interfaces.IContent"
+    template="import.pt"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.ManageContent" />
+
+</configure>

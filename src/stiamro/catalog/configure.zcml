@@ -1,0 +1,9 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+  i18n_domain="stiamro">
+
+  <adapter
+    for="stiamro.content.interfaces.INewsItem"
+    name="stiamro.newsitem.indexer"
+    factory=".indexer.NewsItemIndexer" />
+
+</configure>

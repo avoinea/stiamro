@@ -1,0 +1,52 @@
+<configure
+    xmlns:zope="http://namespaces.zope.org/zope"
+    xmlns="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="z3c.layer.minimal">
+
+  <page
+      for="zope.interface.common.interfaces.IException"
+      name="index.html"
+      class="zope.app.exception.systemerror.SystemErrorView"
+      template="systemerror.pt"
+      permission="zope.Public"
+      layer="stiamro.skins.interfaces.IStiamLayer"
+      />
+
+  <page
+      for="zope.publisher.interfaces.ITraversalException"
+      name="index.html"
+      class="zope.app.exception.systemerror.SystemErrorView"
+      template="systemerror.pt"
+      permission="zope.Public"
+      layer="stiamro.skins.interfaces.IStiamLayer"
+      />
+
+  <page
+      for="zope.security.interfaces.IUnauthorized"
+      name="index.html"
+      class="zope.app.exception.browser.unauthorized.Unauthorized"
+      template="unauthorized.pt"
+      permission="zope.Public"
+      layer="stiamro.skins.interfaces.IStiamLayer"
+      />
+
+  <page
+      for="zope.exceptions.interfaces.IUserError"
+      name="index.html"
+      class="zope.app.exception.browser.user.UserErrorView"
+      template="user.pt"
+      permission="zope.Public"
+      layer="stiamro.skins.interfaces.IStiamLayer"
+      />
+
+  <page
+      for="zope.publisher.interfaces.INotFound"
+      name="index.html"
+      class="zope.app.exception.browser.notfound.NotFound"
+      template="notfound.pt"
+      permission="zope.Public"
+      layer="stiamro.skins.interfaces.IStiamLayer"
+      />
+
+</configure>

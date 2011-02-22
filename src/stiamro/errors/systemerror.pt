@@ -1,0 +1,14 @@
+<html metal:use-macro="context/@@standard_macros/error">
+<body i18n:domain="z3c.layer.minimal">
+<div metal:fill-slot="body">
+  <br/>
+  <br/>
+  <h1 class="page-title" i18n:translate="sys-error">Ops! Eroare de sistem.</h1>
+  <br/>
+  <b i18n:translate="sys-error-contact">Vă rugăm contactaţi administratorul.</b>
+  <a href="javascript:history.back(1);" i18n:translate="sys-error-try-again">
+    Accesaţi pagina anterioară şi încercaţi alt link.
+  </a>
+</div>
+</body>
+</html>

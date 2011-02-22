@@ -1,0 +1,12 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <browser:page name="fogdevverify.html"
+    for="stiamro.content.interfaces.ISite"
+    template="fogdevverify.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View" />
+
+</configure>

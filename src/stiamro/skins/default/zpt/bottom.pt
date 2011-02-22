@@ -1,0 +1,11 @@
+<div id="content-footer" class="content-footer">
+<ul>
+  <li>
+    <a title="Vezi ştirile stiam.ro pe pagina Google"
+      target="_blank"
+      tal:attributes="href string:http://fusion.google.com/add?source=atgs&feedurl=${context/@@absolute_url}/atom.xml">
+      <img src="http://gmodules.com/ig/images/plus_google.gif" border="0" alt="Adauga la Google" />
+    </a>
+  </li>
+</ul>
+</div>

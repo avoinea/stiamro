@@ -1,0 +1,14 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <browser:page
+      name="index.html"
+      for="zope.app.file.interfaces.IImage"
+      layer="stiamro.skins.interfaces.IStiamLayer"
+      permission="zope.View"
+      class="zope.app.file.browser.image.ImageData"
+      />
+
+</configure>

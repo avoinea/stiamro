@@ -1,0 +1,12 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <browser:page name="googlehostedservice.html"
+    for="stiamro.content.interfaces.ISite"
+    template="view.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View" />
+
+</configure>

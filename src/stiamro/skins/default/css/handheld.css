@@ -1,0 +1,50 @@
+.google_search {
+  display: none;
+}
+
+.toolbar li {
+  display: block;
+}
+
+.subtabs li {
+  display: inline;
+}
+
+.right_buttons {
+  display: none;
+}
+
+.page {
+  width: auto;
+}
+
+.sidebar {
+  float: none;
+  width: auto;
+}
+
+.sidebar li {
+  margin-bottom: 0px;
+}
+
+.sidebar .right-link {
+  font-size: 100%;
+}
+
+.body {
+  margin-right: 0px;
+  float: none;
+}
+
+.page-body {
+  margin-right: 0px;
+  padding: 0px;
+}
+
+.google-adds-top {
+  display: none;
+}
+
+.google-adds-bottom {
+  display: none;
+}

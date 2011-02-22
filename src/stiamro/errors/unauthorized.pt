@@ -1,0 +1,21 @@
+<tal:Make_sure_we_process_the_authorization_challenge_first
+  condition="view/issueChallenge"/>
+<html metal:use-macro="context/@@standard_macros/error">
+  <body i18n:domain="z3c.layer.minimal">
+  <div metal:fill-slot="body">
+    <br/>
+    <br/>
+    <h1 class="page-title"
+      i18n:translate="unauthorized">Ops! Accesul nu este permis.</h1>
+    <br/>
+    <b i18n:translate="unauthorized-msg">
+      Nu aveţi suficiente drepturi pentru a accesa această pagină.
+    </b>
+    <br/>
+    <br/>
+    <a href="javascript:history.back(1);" i18n:translate="sys-error-try-again">
+      Accesaţi pagina anterioară şi încercaţi alt link.
+    </a>
+</div>
+</body>
+</html>

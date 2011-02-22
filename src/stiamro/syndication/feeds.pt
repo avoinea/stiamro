@@ -1,0 +1,43 @@
+<metal:block use-macro="context/@@standard_macros/page" i18n:domain="stiam">
+<div metal:fill-slot="body" class="page-body">
+
+<h1 class="page-title">Ce este RSS?</h1>
+
+<h2>
+<strong>RSS:</strong> Rich Site Summary sau Really Simple Syndication
+</h2>
+
+<h3>
+
+RSS va permite sa vedeti titlurile ultimelor stiri,
+sub forma de linkuri, iar apoi sa accesati direct, prin acestea, articolele
+pe care doriti sa le cititi.
+<br /><br />
+Utilizatorii Firefox pot adauga flux-uri RSS in browser folosind optiunea
+<strong>Subscribe to this page</strong> din meniul <strong>Bookmarks</strong>.
+<br /><br />
+Utilizatorii Internet Explorer 7 sau 8 beneficiaza de RSS
+direct in browser (click pe iconul portocaliu RSS sau
+folosind optiunea <strong>Feed Discovery</strong>
+din meniul <strong>Tools</strong>).
+<br /><br />
+Titlurile ultimelor stiri de pe stiam.ro pot fi citite si folosind
+Google Reader sau My Yahoo!
+</h3>
+
+<h3>Flux-uri RSS stiam.ro</h3>
+
+<ul>
+  <li class="rss" tal:repeat="page python:view.pages">
+    <a tal:define="
+      url page/@@absolute_url;
+      url string:$url/atom.xml;"
+      tal:attributes="
+        href url;
+        title python:page.title;"
+      tal:content="python:page.title" />
+  </li>
+</ul>
+
+</div>
+</metal:block>

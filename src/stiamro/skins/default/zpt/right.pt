@@ -1,0 +1,3 @@
+<tal:tabs repeat="tab python:view.tabs">
+  <tal:tab replace="structure python:view.portlet(tab)" />
+</tal:tabs>

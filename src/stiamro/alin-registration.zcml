@@ -1,0 +1,15 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:mail="http://namespaces.zope.org/mail"
+  i18n_domain="stiamro">
+
+  <include package="zope.sendmail" file="meta.zcml" />
+  <include package="zope.sendmail" />
+  <include package=".registration" />
+  <include package=".authentication" />
+
+  <mail:smtpMailer name="stiam.ro" hostname="localhost" />
+  <mail:directDelivery name="stiam.ro.mailer" permission="zope.Public"
+    mailer="stiam.ro" />
+
+</configure>

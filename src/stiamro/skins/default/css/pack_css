@@ -1,0 +1,5 @@
+#!/bin/sh
+cat jqtool.css stiam.css games.css > all.css && \
+java -jar ../../../bin/yuic all.css -o stiam.pack.css && \
+rm all.css
+

@@ -1,0 +1,10 @@
+<div class="subtabs">
+  <ul tal:define="items python:view.items">
+    <li tal:repeat="item items">
+      <span tal:content="structure string:|"
+        tal:define="not_first repeat/item/index" tal:condition="not_first" />
+      <a tal:attributes="href item/@@absolute_url; title item/title"
+        tal:content="item/title" />
+    </li>
+  </ul>
+</div>

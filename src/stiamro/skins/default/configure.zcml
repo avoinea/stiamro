@@ -1,0 +1,281 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+  <interface interface=".interfaces.IStiamLayer" name="stiam"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType" />
+
+  <!-- Macros -->
+  <browser:view
+    for="*"
+    name="stiam_macros"
+    class=".standardmacros.StiamMacros"
+    permission="zope.View"
+    layer=".interfaces.IStiamLayer"
+  />
+
+  <browser:view
+    for="*"
+    name="standard_macros"
+    class=".standardmacros.StandardMacros"
+    permission="zope.View"
+    allowed_interface="zope.interface.common.mapping.IItemMapping"
+    layer=".interfaces.IStiamLayer"
+  />
+
+  <!-- Viewlet managers -->
+  <browser:viewletManager
+    name="stiam.Head"
+    provides=".interfaces.IHead"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewletManager
+    name="stiam.Header"
+    provides=".interfaces.IHeader"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewletManager
+    name="stiam.ToolbarTop"
+    provides=".interfaces.IToolbarTop"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewletManager
+    name="stiam.ToolbarBottom"
+    provides=".interfaces.IToolbarBottom"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewletManager
+    name="stiam.Sidebar"
+    provides=".interfaces.ISidebar"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewletManager
+    name="stiam.ContentTop"
+    provides=".interfaces.IContentTop"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewletManager
+    name="stiam.ContentBottom"
+    provides=".interfaces.IContentBottom"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewletManager
+    name="stiam.Footer"
+    provides=".interfaces.IFooter"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewletManager
+    name="stiam.Foot"
+    provides=".interfaces.IFoot"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <!-- Resources -->
+  <browser:resourceDirectory
+    name="www"
+    directory="www"
+    layer=".interfaces.IStiamLayer"
+  />
+
+  <browser:resourceDirectory
+    name="css"
+    directory="css"
+    layer=".interfaces.IStiamLayer"
+  />
+
+  <browser:resourceDirectory
+    name="js"
+    directory="js"
+    layer=".interfaces.IStiamLayer"
+  />
+
+  <!-- Viewlets -->
+
+  <!-- Head -->
+  <browser:viewlet
+    name="head"
+    for="*"
+    manager=".interfaces.IHead"
+    class=".app.head.HeadViewlet"
+    template="zpt/head.pt"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <!-- Header -->
+  <browser:viewlet
+    name="header"
+    for="*"
+    manager=".interfaces.IHeader"
+    class=".app.header.HeaderViewlet"
+    template="zpt/header.pt"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <!-- Toolbar -->
+  <browser:viewlet
+    name="tabs"
+    for="stiamro.content.interfaces.IContent"
+    manager=".interfaces.IToolbarTop"
+    class=".app.tabs.TabsViewlet"
+    template="zpt/tabs.pt"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewlet
+    name="undertabs"
+    for="stiamro.content.interfaces.IContent"
+    manager=".interfaces.IToolbarBottom"
+    template="zpt/undertabs.pt"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewlet
+    name="undertabs"
+    for="stiamro.content.interfaces.INewsItem"
+    manager=".interfaces.IToolbarBottom"
+    template="zpt/adds_undertabs.pt"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewlet
+    name="undertabs"
+    for="allen.content.games.interfaces.IGame"
+    manager=".interfaces.IToolbarBottom"
+    template="zpt/adds_undertabs.pt"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <!-- Sidebar -->
+  <browser:viewlet
+    name="right"
+    for="stiamro.content.interfaces.ISite"
+    manager=".interfaces.ISidebar"
+    template="zpt/right.pt"
+    class=".app.right.RightViewlet"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewlet
+    name="right"
+    for="stiamro.content.interfaces.IPage"
+    manager=".interfaces.ISidebar"
+    template="zpt/right.pt"
+    class=".app.right.RightViewlet"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewlet
+    name="right"
+    for="stiamro.content.interfaces.IServer"
+    manager=".interfaces.ISidebar"
+    template="zpt/right.pt"
+    class=".app.right.NewsRightViewlet"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewlet
+    name="right"
+    for="stiamro.content.interfaces.INews"
+    manager=".interfaces.ISidebar"
+    template="zpt/right.pt"
+    class=".app.right.NewsRightViewlet"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <!--browser:viewlet
+    name="right"
+    for="stiamro.content.interfaces.INewsItem"
+    manager=".interfaces.ISidebar"
+    template="zpt/adds_right.pt"
+    class=".app.right.RightViewlet"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  /-->
+
+  <!-- Content top -->
+  <browser:viewlet
+    name="top"
+    for="*"
+    manager=".interfaces.IContentTop"
+    template="zpt/top.pt"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <!-- Content bottom -->
+  <browser:viewlet
+    name="bottom"
+    for="stiamro.content.interfaces.IPage"
+    manager=".interfaces.IContentBottom"
+    template="zpt/bottom.pt"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewlet
+    name="bottom"
+    for="stiamro.content.interfaces.INewsItem"
+    manager=".interfaces.IContentBottom"
+    template="zpt/adds_bottom.pt"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:viewlet
+    name="bottom"
+    for="allen.content.games.interfaces.IGame"
+    manager=".interfaces.IContentBottom"
+    template="zpt/adds_bottom.pt"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <!-- Footer -->
+  <browser:viewlet
+    name="footer"
+    for="*"
+    manager=".interfaces.IFooter"
+    template="zpt/footer.pt"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <!-- Foot -->
+  <browser:viewlet
+    name="foot"
+    for="*"
+    manager=".interfaces.IFoot"
+    class=".app.foot.FootViewlet"
+    template="zpt/foot.pt"
+    layer=".interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+</configure>

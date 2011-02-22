@@ -1,0 +1,50 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:meta="http://namespaces.zope.org/meta"
+           i18n_domain="stiamro">
+
+  <!-- Turn on the devmode -->
+  <meta:provides feature="devmode" />
+  <include package="stiamro" />
+
+  <include package="zope.app.securitypolicy" file="meta.zcml" />
+  <include package="zope.app.securitypolicy" />
+  <securityPolicy 
+      component="zope.app.securitypolicy.zopepolicy.ZopeSecurityPolicy" />
+
+  <!-- Test Principals -->
+
+  <unauthenticatedPrincipal id="zope.anybody"
+                            title="Unauthenticated User" />
+  <unauthenticatedGroup id="zope.Anybody"
+                        title="Unauthenticated Users" />
+  <authenticatedGroup id="zope.Authenticated"
+                      title="Authenticated Users" />
+  <everybodyGroup id="zope.Everybody"
+                  title="All Users" />
+
+  <!-- Principal that tests generally run as -->
+  <principal
+      id="zope.mgr"
+      title="Manager"
+      login="mgr"
+      password="mgrpw"
+      />
+  <!-- Bootstrap principal used to make local grant to the principal above -->
+  <principal
+      id="zope.globalmgr"
+      title="Manager"
+      login="globalmgr"
+      password="globalmgrpw"
+      />
+
+  <grant permission="zope.View"
+         principal="zope.Anybody" />
+  <grant permission="zope.app.dublincore.view"
+         principal="zope.Anybody" />
+
+  <role id="zope.Manager" title="Site Manager" />
+  <role id="zope.Member" title="Site Member" />
+  <grantAll role="zope.Manager" />
+  <grant role="zope.Manager" principal="zope.globalmgr" />
+
+</configure>

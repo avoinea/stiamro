@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="/@@/css/atom.css"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:tal="http://xml.zope.org/namespaces/tal">
+  <title type="html"
+    tal:content="view/title" />
+  <subtitle type="html"
+    tal:content="view/subtitle"
+    tal:condition="view/subtitle"/>
+  <updated tal:content="python:view.updated_str" />
+  <id tal:content="view/uid" />
+  <icon tal:content="view/icon"
+    tal:condition="view/icon" />
+  <logo tal:content="view/logo"
+    tal:condition="view/logo" />
+  <link rel="alternate"
+    type="text/html"
+    tal:attributes="href view/permalink" />
+  <link rel="self" type="application/atom+xml"
+    tal:attributes="href view/atomlink" />
+  <generator tal:attributes="uri view/permalink; version string:1.0"
+    tal:content="string:stiam.ro" />
+  <tal:entry repeat="entry view/items">
+  <entry tal:define="xml nocall:entry/@@atom.xml"
+    tal:replace="structure python:xml(page=view.permalink)" />
+  </tal:entry>
+</feed>

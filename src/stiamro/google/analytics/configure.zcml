@@ -1,0 +1,84 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <include file="vocabularies.zcml" />
+
+  <utility provides=".interfaces.IGoogleAnalyticsConnection"
+    factory=".connection.GoogleAnalyticsConnection" />
+
+  <utility provides=".interfaces.IXMLParser"
+    factory=".xmlparser.XMLParser" />
+
+  <!-- Analytics -->
+  <class class=".content.Analytics">
+    <implements interface=".interfaces.IAnalytics" />
+    <require
+      interface=".interfaces.IAnalytics"
+      permission="zope.View" />
+    <require
+      set_schema=".interfaces.IAnalyticsEdit"
+      permission="zope.ManageContent" />
+  </class>
+
+  <browser:addMenuItem
+    title="Google Analytics"
+    description="Conexiune la Google Analytics"
+    class=".content.Analytics"
+    for="*"
+    permission="zope.ManageContent" />
+
+  <browser:page name="index.html"
+    for=".interfaces.IAnalytics"
+    class=".browser.AnalyticsViewPage"
+    template="analytics.pt"
+    layer="zope.interface.Interface"
+    permission="zope.ManageContent" />
+
+  <browser:page name="register"
+    for=".interfaces.IAnalytics"
+    class=".browser.AnalyticsRegisterPage"
+    layer="zope.interface.Interface"
+    permission="zope.ManageContent"
+    />
+
+  <!-- Analytics Report -->
+  <class class=".content.AnalyticsReport">
+    <implements interface=".interfaces.IAnalyticsReport" />
+    <require
+      interface=".interfaces.IAnalyticsReport"
+      permission="zope.View" />
+    <require
+      set_schema=".interfaces.IAnalyticsReport"
+      permission="zope.ManageContent" />
+  </class>
+
+  <browser:icon
+    name="zmi_icon"
+    for=".interfaces.IAnalytics"
+    file="analytics.gif"
+  />
+
+  <browser:addMenuItem
+    title="Google Analytics Report"
+    description="Raport Google Analytics"
+    class=".content.AnalyticsReport"
+    for="*"
+    permission="zope.ManageContent" />
+
+  <browser:icon
+    name="zmi_icon"
+    for=".interfaces.IAnalyticsReport"
+    file="report.gif"
+  />
+
+  <browser:page name="index.xml"
+    for=".interfaces.IAnalyticsReport"
+    class=".browser.ReportViewPage"
+    attribute="xml"
+    layer="zope.interface.Interface"
+    permission="zope.ManageContent"
+    />
+
+</configure>

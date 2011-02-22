@@ -1,0 +1,187 @@
+<metal:block use-macro="context/@@standard_macros/page" i18n:domain="stiam">
+<div metal:fill-slot="body" class="page-body">
+
+<h1 class="page-title">Termenii si conditiile de utilizare a site-ului</h1>
+
+<h2>Termeni generali</h2>
+<h3>
+Termenii si conditiile de utilizare a site-ului www.stiam.ro
+(denumite in continuare “Termeni si Conditii”)
+stabileste care sunt conditiile in care orice persoana poate vizita ori accesa
+site-ul www.stiam.ro (denumit in continuare “Site-ul” si/sau "stiam.ro")
+si are valoarea unei conventii incheiate intre proprietarul si administratorul
+Site-ului (denumit in continuare “Administrator”), si orice persoana care
+viziteaza ori acceseaza Site-ul sau care doreste sa utilizeze in orice mod
+sau utilizeaza efectiv Site-ul (denumita in continuare “Utilizator”).
+Neacceptarea acestor Termeni si Conditii ori a oricarei prevederi din acestea
+atrage obligatia persoanei respective de a inceta de indata accesarea Site-ului,
+iar accesarea sau vizitarea in continuare a Site-ului, a oricarei pagini din
+acesta precum si a oricarui component al acestuia constituie o acceptare in
+intregime si neconditionata a Termenilor si Conditiilor si a oricarei
+prevederi din acestea.
+</h3>
+
+<tal:comment condition="nothing">
+<h2>Materialele si informatiile accesibile prin intermediul Site-ului</h2>
+
+<h3>
+Continutul si elementele de grafica ale Site-ului, inclusiv dar fara a se
+limita la acestea, precum si sursele tehnice ale tuturor serviciilor si
+facilitatilor prezente si viitoare, cu exceptia cazului cand este mentionat
+expres un alt proprietar, sursele paginilor dar si orice alt material, transmis
+sub orice forma de si catre Utilizatori (prin vizualizare directa pe site,
+prin newslettere etc,) apartin stiam.ro si partenerilor sai si reprezinta
+continutul Site-ului.
+</h3>
+
+<h3>
+Continutul Site-ului, indiferent de zona in care se afla in Site si indiferent
+de tip, poate fi utilizat exclusiv in scopuri personale. Orice utilizare de
+continut de catre terte persoane in alte scopuri decat cel personal,
+se poate face numai cu acordul scris, expres si prealabil al
+Administratorului site-ului.
+Cererile de utilizare a continutului Site-ului in orice scop altul decat cel
+personal pot fi facute prin e-mail la adresa contact@stiam.ro.
+</h3>
+
+<h3>
+Orice persoane care expediaza in orice mod informatii ori materiale
+catre Site isi asuma obligatia de a nu prejudicia in nici un mod drepturile
+de autor pe care o terta persoana le-ar putea invoca in legatura cu materialele
+si informatiile transmise in orice mod catre Site, iar persoanele care
+expediaza in orice mod informatii ori materiale inteleg si accepta ca
+incalcarea in orice mod a acestei obligatii nu poate angaja in nici un mod
+raspunderea Administratorului site-ului, ci numai raspunderea persoanelor
+respective.
+</h3>
+</tal:comment>
+
+
+<h2>Sursele stirilor/articolelor</h2>
+
+<h3>stiam.ro afiseaza doar continutul disponibil in Feed-ul RSS public,
+cu scurte descrieri, imagini si linkuri video disponibile in Feed,
+disponibile gratuit pe Internet. stiam.ro ofera link cu trimitere catre
+toate sursele de informatie si publicatiile folosite. Daca proprietarul
+unui site nu doreste ca informatiile disponibile in Feed sa apara si pe stiam.ro
+trebuie sa faca o cerere explicita catre compania noastra la adresa de email
+contact@stiam.ro. Cererile vor fi analizate si indeplinite in cel mai scurt
+timp de la primirea mesajului.</h3>
+
+<h3>Continutul site-ului, textele, grafica, fotografiile, software-ul precum
+si alte materiale sunt protejate de legea dreptului de autor. Intregul material
+este proprietatea stiam.ro. Aricolele si imaginile stirilor sunt © Copyright-ul
+siteurilor si ziarelor din Feed-ul carora au fost preluate.</h3>
+
+<h3>stiam.ro ofera linkuri catre toate sursele. stiam.ro nu este raspunzator pentru
+continutul siteurilor catre care face trimitere sau orice consecinte
+datorate utilizarii acestor site-uri.</h3>
+
+<tal:comment condition="nothing">
+<h2>Descrierea serviciului de indexare</h2>
+
+<h3>stiam.ro utilizeaza un motor de cautare prin intermediul caruia se realizeaza
+indexarea paginilor postate pe diferite site-uri. Indexarea paginilor cu
+ajutorul acestui motor de cautare nu presupune nici o alta actiune sau
+operatiune in raport cu aceste pagini in afara indexarii propriu-zise;
+indexarea anunturilor nu presupune nici o prelucrare sau procesare a acestor
+pagini sau a informatiilor de orice fel incluse in ele.
+</h3>
+<h3>
+Indexarea paginilor presupune redarea acestora in forma in care ele sunt
+postate pe site-urile de pe care provin, fara a se opera modificari ale
+continutului lor; modificarea unor detalii de formatare / asezare in pagina
+se face numai din ratiuni pur tehnice, care vizeaza uniformizarea modului de
+prezentare a informatiilor indexate, si nu poate fi considerata o modificare
+a continutului lor.
+</h3>
+<h3>
+Drepturile de proprietate intelectuala corespunzatoare site-urilor de
+provenienta ale materialelor indexate nu sunt afectate in nici un mod prin
+operatiunea de indexare; indexarea nu incalca in nici un mod aceste drepturi,
+iar Administratorul site-ului nu are nici un fel de pretentii si nici o raspundere
+in raport cu aceste drepturi.
+</h3>
+<h3>
+Prin indexare, stiam.ro nu preia de la administratorii sau detinatorii
+site-urilor de provenienta nici o raspundere privind respectarea drepturilor
+de proprietate intelectuala in legatura cu materialele indexate sau cu
+site-urile de provenienta ale acestora, privind respectarea prevederilor
+legale in legatura cu acestea, sau privind continutul lor, autenticitatea
+acestora sau orice alte detalii privind raporturile dintre autorii lor si
+site-urile pe care materialele sunt postate ori pe care se solicita postarea.
+</h3>
+<h3>
+Prin indexare, nu se realizeaza nici un fel de preluare a datelor de contact
+sau a datelor personale corespunzatoare autorilor materialelor indexate,
+si in general nu se realizeaza nici o operatiune de prelucrare de date cu
+caracter personal din aceste materiale, si nu se preia nici o raspundere
+privind conformarea la legislatia protectiei datelor cu caracter personal.
+</h3>
+</tal:comment>
+
+<h2>Limitarea raspunderii</h2>
+
+<h3>
+Administratorul site-ului nu isi asuma obligatia si nu garanteaza implicit sau expres,
+pentru continutul de pe site, pentru continutul oferit de partenerii sai sau
+de Utilizatorii site-ului. Administratorul site-ului va face toate eforturile
+rezonabile pentru a asigura acuratetea si increderea in site si va incerca sa
+corecteze erorile si omisiunile cat mai repede posibil.
+</h3>
+<h3>
+Cu toate acestea, Administratorul site-ului nu este responsabila pentru inadvertente,
+erori sau omisiuni in cadrul informatiilor furnizate de Utilizatori.
+In mod expres, Utilizatorii site-ului sunt de acord sa exonereze de
+raspundere pe Administratorul site-ului pentru orice actiune judiciara sau extrajudiciara,
+care provine ca urmare a utilizarii incorecte sau frauduloase a site-ului.
+</h3>
+<h3>
+Pentru caz de forta majora, Administratorul site-ului si/sau operatorii, directorii, angajatii,
+sucursalele, filialele si reprezentantii sai, este exonerat total de raspundere.
+Cazurile de forta majora includ, dar nu se limiteaza la, erori de functionare
+ale echipamentului tehnic unde este gazduit Site-ul,
+lipsa functionarii conexiunii la internet,
+lipsa functionarii conexiunilor de telefon, virusii informatici,
+accesul neautorizat in sistemele Site-ului, erorile de operare, greva, etc.
+</h3>
+<h3>
+Utilizatorii sunt de acord sa protejeze si sa-l asigure pe Administratorul site-ului
+si/sau pe operatorii, directorii, angajatii, sucursalele, filialele si reprezentantii sai
+de si impotriva oricaror cereri, pretentii, actiuni, impuneri, pierderi, daune,
+costuri (incluzand, fara nici un fel de limitare, onorariile avocatilor),
+cheltuieli, judecati, decizii, amenzi, regularizari sau alte obligatii
+rezultate sau relationate cu orice alta actiune a Utilizatorului in legatura
+cu utilizarea Site-ului sau orice alt aspect relationat Site-ului.
+</h3>
+
+<h3>Modificarea Termenilor si Conditiilor</h3>
+
+<h3>
+Administratorul site-ului are dreptul de a modifica oricand si in orice mod oricare dintre
+prevederile din Termeni si Conditii sau Termenii si Conditiile in intregime,
+fara nici o notificare prealabila si fara a fi obligata sa indeplineasca vreo
+alta formalitate fata de Utilizatori. Orice modificare este acceptata deplin
+si neconditionat de catre Utilizatorii Site-ului prin simpla utilizare sau
+accesare a oricarei facilitati oferite de site, intervenite oricand dupa
+operarea modificarii, iar neacceptarea oricarei modificari atrage obligatia
+respectivului Utilizator de a inceta de indata accesarea site-ului.
+</h3>
+
+<tal:comment condition="nothing">
+<h2>Legea aplicabila. Litigii</h2>
+
+<h3>
+Drepturile si obligatiile Utilizatorilor Site-ului si ale Administratorului site-ului,
+prevazute de Termeni si Conditii, precum si toate efectele juridice pe care
+le produc Termenii si Conditiile vor fi interpretate si guvernate in
+conformitate cu legea romana in vigoare. Orice litigiu nascut din sau in
+legatura cu Termenii si Conditiile va fi solutionat pe cale amiabila.
+In caz de imposibilitate de a ajunge la un acord, litigiul vor fi solutionat
+de catre instanta judecatoreasca romana competenta aflata in raza teritoriala
+a municipiului Bucuresti.
+</h3>
+</tal:comment>
+
+</div>
+</metal:block>

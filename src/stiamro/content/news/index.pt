@@ -1,0 +1,9 @@
+<metal:block use-macro="context/@@standard_macros/page"
+  i18n:domain="stiam">
+  <div metal:fill-slot="body" class="page-body" id="page-body">
+    <h1 class="page-title" tal:define="title python:context.__parent__.title + ': ' + context.title"
+      tal:content="title" tal:condition="title" />
+    <div tal:replace="structure context/@@breadcrumbs.portlet|string:" />
+    <tal:newsitems replace="structure context/@@content.html" />
+  </div>
+</metal:block>

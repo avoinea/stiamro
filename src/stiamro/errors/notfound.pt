@@ -1,0 +1,19 @@
+<html metal:use-macro="context/@@standard_macros/error">
+<body i18n:domain="z3c.layer.minimal">
+<div metal:fill-slot="body">
+  <br/>
+  <br/>
+  <h1 class="page-title" i18n:translate="page-not-found">
+    Ops! Pagina nu există.
+  </h1>
+  <br/>
+  <ol>
+    <li>
+      <a href="javascript:history.back(1);" i18n:translate="page-not-found-try-again">
+        Accesaţi pagina anterioară şi încearcaţi alt link.
+      </a>
+    </li>
+  </ol>
+</div>
+</body>
+</html>

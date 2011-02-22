@@ -1,0 +1,8 @@
+<html metal:use-macro="context/@@standard_macros/page">
+  <body>
+    <div metal:fill-slot="body">
+      <h1>Hopa!</h1>
+      <p>Linkul de confirmare este gresit. Contul nu a fost activat</p>
+    </div>
+  </body>
+</html>

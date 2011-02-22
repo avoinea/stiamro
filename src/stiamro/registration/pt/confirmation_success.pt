@@ -1,0 +1,17 @@
+<html metal:use-macro="context/@@standard_macros/page">
+  <body>
+    <div metal:fill-slot="body">
+      <h1>Inregistrare reusita</h1>
+      <p>Contul tau a fost creat cu succes</p>
+      <p>Apasa pe butonul de mai jos pentru a te autentifica</p>
+      <form method="POST" tal:define="reginfo view/reginfo"
+        tal:attributes="action string:${context/@@absolute_url}/@@index.html">
+        <input type="hidden" name="login"
+          tal:attributes="value python:reginfo.data['username']" />
+        <input type="hidden" name="password"
+          tal:attributes="value python:reginfo.data['password']" />
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+  </body>
+</html>

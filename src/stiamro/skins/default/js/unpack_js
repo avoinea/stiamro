@@ -1,0 +1,4 @@
+#!/bin/sh
+cat \
+    stiam.js \
+    > stiam.pack.js

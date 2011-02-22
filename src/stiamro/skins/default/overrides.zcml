@@ -1,0 +1,5 @@
+<configure xmlns:browser="http://namespaces.zope.org/browser">
+
+    <browser:defaultSkin name="stiam" />
+
+</configure>

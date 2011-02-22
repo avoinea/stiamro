@@ -1,0 +1,44 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="learningjourney">
+
+  <browser:page name="register.html"
+    class=".page.RegistrationPage"
+    for="..content.interfaces.ISite"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View" />
+
+  <browser:page name="confirm.html"
+    class=".page.ConfirmationPage"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.Public"
+    for="..content.interfaces.ISite" />
+
+  <class class=".userhome.UserHome">
+    <require permission="stiam.ro.ModifyContent"
+      interface="zope.app.container.interfaces.IWriteContainer" />
+    <require permission="zope.View"
+      interface="zope.app.container.interfaces.IReadContainer" />
+    <implements interface="zope.annotation.interfaces.IAttributeAnnotatable">
+      This will give this object its own
+      security manager
+    </implements>
+  </class>
+
+  <class class=".registration.Registrations">
+    <require permission="zope.View" set_schema=".interfaces.IRegistrations" />
+    <require permission="zope.ManageContent"
+      interface="zope.app.container.interfaces.IReadContainer" />
+  </class>
+
+  <adapter factory=".registration.ConfirmationEmail" />
+  <subscriber handler=".registration.send_registration_mail" />
+
+  <browser:page name="index.html"
+    template="pt/userhome.pt"
+    for=".interfaces.IUserHome"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View" />
+
+</configure>

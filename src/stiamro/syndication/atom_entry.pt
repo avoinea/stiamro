@@ -1,0 +1,16 @@
+<entry>
+  <title type="html"
+    tal:content="view/title" />
+  <link type="text/html"
+    tal:attributes="href view/permalink"
+    rel="alternate" />
+  <id tal:content="view/uid" />
+  <updated tal:content="view/updated_str" />
+  <author tal:condition="view/author">
+    <name tal:content="view/author" />
+  </author>
+  <summary type="html"
+    tal:attributes="xml:lang string:ro" tal:content='string:
+    &lt;img title="${view/title}" alt="${view/title}" src="${view/thumbnail}" /&gt;
+    &lt;div&gt; ${view/subtitle} &lt;/div&gt;' />
+</entry>

@@ -1,0 +1,10 @@
+<div>
+  <span>Copyright © 2009-2011</span>
+  <a href="/">stiam.ro</a>
+  <span>|</span>
+  <tal:contact condition="nothing">
+  <a href="/contact.html">contact</a>
+  <span>|</span>
+  </tal:contact>
+  <a href="/termeni-si-conditii.html">termeni şi condiţii</a>
+</div>

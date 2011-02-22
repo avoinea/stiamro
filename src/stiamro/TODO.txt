@@ -1,0 +1,20 @@
+1. Cache
+  - thumbnails
+    - etag
+    - last-modified
+    - memcache
+  - RSS
+    - memcache
+
+2. Maybe cache
+  - page content
+    - etag
+    - last-modified
+    - memcache
+  - right portlets
+    - etag
+    - last-modified
+    - memcache
+
+3. Make less server requests
+  - Combine all icons in one image and use css to locate them in this picture

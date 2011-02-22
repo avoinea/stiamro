@@ -1,0 +1,43 @@
+<metal:block use-macro="context/@@standard_macros/page" i18n:domain="stiam">
+<div metal:fill-slot="body">
+
+  <h1 class="documentFirstHeading"
+    i18n:translate="title-google-analytics">Google Analytics Connection</h1>
+
+  <div tal:define="token python:view.context.token" class="google-analytics">
+    <fieldset>
+    <legend i18n:translate="">Connection details</legend>
+    <!-- Token not registered -->
+    <div tal:condition="not:token" tal:define="
+      url string:https://www.google.com/accounts/AuthSubRequest;
+      next string:${context/@@absolute_url}/register;
+      scope string:https://www.google.com/analytics/feeds/;">
+      <a tal:attributes="href string:$url?next=$next&scope=$scope&session=1"
+        i18n:translate="">Register with Google</a>
+    </div>
+
+    <!-- Token registered-->
+    <div tal:condition="token">
+      <dl>
+        <dt i18n:translate="">Authentication token:</dt>
+        <dd>
+          <span tal:content="token" class="connected">Stored token</span>
+          <a tal:attributes="href string:${context/@@absolute_url}/register?token="
+          i18n:attributes="title" title="Remove token">Unregister token</a>
+        </dd>
+        <tal:status define="
+          se python:view.status_error;
+          status se/status;
+          error se/error;
+          class python:status != 200 and 'broken' or 'connected'">
+          <dt i18n:translate="">Connection status:</dt>
+          <dd tal:content="python:error" tal:attributes="class class">Status</dd>
+        </tal:status>
+      </dl>
+    </div>
+    </fieldset>
+
+  </div>
+
+</div>
+</metal:block>

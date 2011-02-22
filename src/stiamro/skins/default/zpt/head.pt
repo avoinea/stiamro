@@ -1,0 +1,53 @@
+<meta tal:attributes="content view/headtitle" name="title" />
+<meta tal:attributes="content view/headsubtitle" name="description" />
+<meta tal:attributes="content view/headkeywords" name="keywords" />
+
+<meta content="(Copyright © 2009-2011 stiam.ro" name="copyright">
+<meta content="index,follow" name="robots">
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+<title tal:content="view/headtitle" />
+
+<link rel="canonical" tal:attributes="href view/headurl" />
+
+<tal:atom repeat="page view/pages">
+<link rel="alternate" type="application/atom+xml" tal:attributes="
+  href python:view.url(page) + '/atom.xml';
+  title python:view.title(page);
+" />
+</tal:atom>
+
+<link rel="icon" type="image/png" tal:attributes="
+  href context/++resource++www/favicon.png" />
+
+<link rel="stylesheet" media="all" tal:define="
+  started python:view.started;
+  resource context/++resource++css/stiam.pack.css"
+  tal:attributes="href string:$resource?cache=$started" />
+
+<link rel="stylesheet" media="only screen and (max-device-width: 480px)" tal:define="
+  started python:view.started;
+  resource context/++resource++css/handheld.css"
+  tal:attributes="href string:$resource?cache=$started" />
+
+<link rel="stylesheet" media="handheld" tal:define="
+  started python:view.started;
+  resource context/++resource++css/handheld.css"
+  tal:attributes="href string:$resource?cache=$started" />
+
+<!--[if lt IE 8]>
+<style type="text/css">
+  .n-content {
+    clear: left;
+  }
+
+  .right-link {
+    margin-left: 0px ! important;
+    clear: left ! important;
+  }
+</style>
+<![endif]-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+<meta name="google-site-verification" content="GT7yNVNfVhms4-xfiSrRdKs4OBfPbjhnG8zXu3_dpwo" />
+<meta name="alexaVerifyID" content="dY4-f_IQbMZxKZzQ4gEafWRO-ek" />

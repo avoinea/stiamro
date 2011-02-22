@@ -1,0 +1,57 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <include package=".site" />
+  <include package=".source" />
+  <include package=".server" />
+  <include package=".news" />
+  <include package=".newsitem" />
+  <include package=".page" />
+  <include package=".image" />
+
+  <adapter
+    provides="zope.app.container.interfaces.INameChooser"
+    for=".interfaces.IContent"
+    factory=".namechooser.NameChooser"
+    />
+
+  <adapter
+    provides=".interfaces.ISortedContent"
+    for=".interfaces.IContent"
+    factory=".sortedcontent.SortedContent"
+    />
+
+  <adapter
+    for=".interfaces.IContent zope.publisher.interfaces.browser.IBrowserRequest"
+    provides="stiamro.xml.interfaces.IExport"
+    factory=".export.ExportContent" />
+
+  <adapter
+    for=".interfaces.IContent zope.publisher.interfaces.browser.IBrowserRequest"
+    provides="stiamro.xml.interfaces.IImport"
+    factory=".import.ImportContent" />
+
+  <adapter
+    for=".interfaces.INewsItem zope.publisher.interfaces.browser.IBrowserRequest"
+    provides="stiamro.xml.interfaces.IExport"
+    factory=".export.ExportNewsItem" />
+
+  <adapter
+    for="zope.app.file.interfaces.IImage zope.publisher.interfaces.browser.IBrowserRequest"
+    provides="stiamro.xml.interfaces.IExport"
+    factory=".export.ExportImage" />
+
+  <adapter
+    for="zope.app.file.interfaces.IImage zope.publisher.interfaces.browser.IBrowserRequest"
+    provides="stiamro.xml.interfaces.IImport"
+    factory=".import.ImportImage" />
+
+  <browser:page name="termeni-si-conditii.html"
+    for=".interfaces.ISite"
+    template="terms.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View" />
+
+</configure>

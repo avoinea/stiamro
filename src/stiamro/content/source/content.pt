@@ -1,0 +1,6 @@
+<tal:newsitems define="items python:view.items">
+  <tal:newsitem tal:repeat="item items">
+    <tal:item
+      replace="structure item/@@content.portlet | string:" />
+  </tal:newsitem>
+</tal:newsitems>

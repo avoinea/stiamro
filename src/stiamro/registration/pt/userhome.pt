@@ -1,0 +1,6 @@
+<metal:block use-macro="context/@@standard_macros/page"
+  i18n:domain="stiam">
+  <div metal:fill-slot="body">
+    Hellow
+  </div>
+</metal:block>

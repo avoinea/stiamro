@@ -1,0 +1,66 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <class class="..news.News">
+    <implements interface="..interfaces.INewsUpdater" />
+    <require
+      interface="..interfaces.INews"
+      permission="zope.View" />
+    <require
+      set_schema="..interfaces.INewsUpdater"
+      permission="zope.View" />
+    <require
+      set_schema="..interfaces.INews"
+      permission="zope.ManageContent" />
+  </class>
+
+  <browser:addMenuItem
+    title="Stiri"
+    description="Flux de stiri"
+    class="..news.News"
+    for="*"
+    permission="zope.ManageContent" />
+
+  <browser:page name="add_news.html"
+    for="..interfaces.IServer"
+    class=".browser.NewsAddPage"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.ManageContent" />
+
+  <browser:page name="edit.html"
+    for="..interfaces.INews"
+    class=".browser.NewsEditPage"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.ManageContent" />
+
+  <browser:page name="update"
+    for="..interfaces.INewsUpdater"
+    class=".browser.NewsUpdatePage"
+    layer="zope.interface.Interface"
+    permission="zope.ManageContent" />
+
+  <browser:page name="index.html"
+    for="..interfaces.INews"
+    template="index.pt"
+    class=".browser.View"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:page name="content.html"
+    for="..interfaces.INews"
+    class=".browser.Content"
+    template="content.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:icon
+    name="zmi_icon"
+    for="..interfaces.INews"
+    file="icon.gif"
+  />
+
+</configure>

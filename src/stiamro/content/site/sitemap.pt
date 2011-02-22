@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url tal:repeat="tab python:view.tabs">
+    <loc tal:content="string:${tab/@@absolute_url}" />
+    <lastmod tal:content="python:view.lastmodified(tab)" />
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>

@@ -1,0 +1,15 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  i18n_domain="stiamro">
+
+  <adapter
+    for="stiamro.content.interfaces.IContent"
+    provides=".interfaces.ILastUpdated"
+    factory=".updated.LastUpdated"
+    />
+
+  <utility
+    provides=".interfaces.IText"
+    factory=".text.Text" />
+
+</configure>

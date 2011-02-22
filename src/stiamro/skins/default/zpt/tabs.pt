@@ -1,0 +1,13 @@
+<ul tal:define="tabs python:view.tabs">
+  <tal:tab repeat="tab tabs">
+    <li tal:define="
+      url tab/url;
+      title tab/title;
+      current tab/current;"
+      tal:attributes="
+      class python:current and 'current' or ''">
+      <a tal:attributes="href url"
+        tal:content="title"/>
+    </li>
+  </tal:tab>
+</ul>

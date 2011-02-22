@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url tal:repeat="item python:view.items">
+    <tal:vars  define="
+      item_index nocall:item/@@content.html;
+      thumb python:item_index.thumbnail()">
+      <loc tal:content="string:${item/@@absolute_url}" />
+      <lastmod tal:content="python:view.lastmodified(item)" />
+      <changefreq>weekly</changefreq>
+      <image:image tal:condition="thumb">
+        <image:loc tal:content="thumb" />
+      </image:image>
+    </tal:vars>
+  </url>
+</urlset>

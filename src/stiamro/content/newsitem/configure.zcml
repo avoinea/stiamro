@@ -1,0 +1,50 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <class class="..newsitem.NewsItem">
+    <require
+      interface="..interfaces.INewsItem"
+      permission="zope.View" />
+    <require
+      set_schema="..interfaces.INewsItem"
+      permission="zope.ManageContent" />
+  </class>
+
+  <browser:addMenuItem
+    title="Stire"
+    description="o stire"
+    class="..newsitem.NewsItem"
+    for="*"
+    permission="zope.ManageContent" />
+
+  <browser:page name="add_newsitem.html" class=".browser.NewsItemAddPage"
+    for="..interfaces.INews"
+    layer="zope.interface.Interface"
+    permission="zope.ManageContent" />
+
+  <browser:page name="edit.html" class=".browser.NewsItemEditPage"
+    for="..interfaces.INewsItem"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.ManageContent" />
+
+  <browser:page name="index.html" class=".browser.NewsItemView"
+    for="..interfaces.INewsItem"
+    template="index.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View" />
+
+  <browser:page name="content.html" class=".browser.NewsItemView"
+    for="..interfaces.INewsItem"
+    template="content.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View" />
+
+  <browser:icon
+    name="zmi_icon"
+    for="..interfaces.INewsItem"
+    file="icon.gif"
+  />
+
+</configure>

@@ -1,0 +1,80 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <browser:page name="count.html" class=".browser.View"
+    for="zope.intid.interfaces.IIntIds"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.ManageContent" />
+
+  <browser:page name="count.html" class=".browser.IndexView"
+    for="z3c.indexer.interfaces.IIndex"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.ManageContent" />
+
+  <browser:page name="cleanup"
+    for="..content.interfaces.ISite"
+    class=".cleanup.Cleanup"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.View"
+  />
+
+  <browser:page name="cleanup-thumbs"
+    for="..content.interfaces.ISite"
+    class=".thumbscleanup.Cleanup"
+    layer="stiamro.skins.interfaces.IManageLayer"
+    permission="zope.View"
+  />
+
+  <!-- Debug -->
+
+  <!--subscriber
+    for="..content.interfaces.IContent zope.component.interfaces.IObjectEvent"
+    handler=".events.printEvent"
+   /-->
+
+  <!-- Site added -->
+  <subscriber
+    for="..content.interfaces.ISite zope.app.container.interfaces.IObjectAddedEvent"
+    handler=".events.site_on_add"
+   />
+
+  <subscriber
+    for=".interfaces.INewsUpdater zope.app.container.interfaces.IObjectAddedEvent"
+    handler=".events.updater_on_add"
+   />
+
+  <subscriber
+    for=".interfaces.INewsUpdater zope.app.container.interfaces.IObjectRemovedEvent"
+    handler=".events.updater_on_delete"
+   />
+
+  <subscriber
+    for="..content.interfaces.INews zope.app.container.interfaces.IObjectAddedEvent"
+    handler=".events.news_on_add"
+   />
+
+  <subscriber
+    for="..content.interfaces.INewsItem zope.app.container.interfaces.IObjectAddedEvent"
+    handler=".events.newsitem_on_add"
+   />
+
+  <subscriber
+    for="..content.interfaces.INewsItem zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+    handler=".events.newsitem_on_change"
+   />
+
+  <subscriber
+    for="..content.interfaces.INewsItem zope.app.container.interfaces.IObjectRemovedEvent"
+    handler=".events.newsitem_on_delete"
+   />
+
+  <browser:addMenuItem
+    title="Automatic updater"
+    description="lovely.remotetask updater for stiam.ro"
+    class=".updater.NewsUpdater"
+    for="*"
+    permission="zope.ManageContent" />
+
+</configure>

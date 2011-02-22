@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object factory="stiamro.content.site.Site" name="stiam.ro">
+ <property name="title">Revista presei romanesti</property>
+ <property name="description">Stiri, monden, sport, economie, politica, cultura, stiinta si it, divertisment, stiri de ultima ora</property>
+ <property name="cleanup_period">72000</property>
+</object>

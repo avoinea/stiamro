@@ -1,0 +1,30 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <browser:page name="atom.xml"
+    for="..content.interfaces.IPage"
+    class=".atom.Atom"
+    template="atom.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+    />
+
+  <browser:page name="atom.xml"
+    for="..content.interfaces.INewsItem"
+    class=".atom.AtomEntry"
+    template="atom_entry.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+    />
+
+  <browser:page name="flux.html"
+    for="..content.interfaces.ISite"
+    class=".feeds.FeedsView"
+    template="feeds.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+    />
+
+</configure>

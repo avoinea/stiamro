@@ -1,0 +1,91 @@
+/* Status message */
+#messages {
+  background: #FFFFFF url(/@@/www/gradient.png) repeat-x scroll 0 0;
+  border-bottom: 2px solid #778899;
+  display: none;
+  font-size: 18px;
+  left: 0;
+  overflow: visible;
+  padding: 15px;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+
+/* Image overlay
+*/
+
+#image_overlay {
+  display:none;
+  z-index:10000;
+  background-color:#333;
+
+  width:750px;
+  min-height:200px;
+  border:1px solid #666;
+
+  /* CSS3 styling for latest browsers */
+  -moz-box-shadow:0 0 90px 5px #000;
+  -webkit-box-shadow: 0 0 90px #000;
+}
+
+/* close button positioned on upper right corner */
+#image_overlay .close {
+  background-image:url('/@@/www/close.png');
+  position:absolute;
+  right:-15px;
+  top:-15px;
+  cursor:pointer;
+  height:35px;
+  width:35px;
+}
+
+#image_overlay .left {
+  min-height: 250px;
+}
+
+#image_overlay .right {
+  font-family:"Lucida Grande","bitstream vera sans","trebuchet ms",sans-serif,verdana;
+  position:absolute;
+  top:15px;
+  right:15px;
+  font-size:11px;
+  color:#fff;
+  width:240px;
+  height: 80%;
+  overflow: hidden;
+}
+
+#image_overlay .right h3 {
+  color:#aba;
+  font-size:15px;
+  margin:0 0 -10px 0;
+}
+
+#image_overlay .underline {
+  padding: 0.5em;
+  border-top: 1px solid #666;
+}
+
+#image_overlay .underline .share a {
+  padding-right: 0.5em;
+}
+
+#image_overlay .underline .url {
+  background-position:right center;
+  background-repeat:no-repeat;
+  float:right;
+  padding-left:1em;
+  padding-right:20px;
+}
+
+#image_overlay .underline .url a {
+  color: #f3890b;
+}
+
+#image_overlay .right-full {
+  width: 95%;
+}

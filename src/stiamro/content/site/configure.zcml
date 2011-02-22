@@ -1,0 +1,59 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <class class="..site.Site">
+    <require
+      interface="..interfaces.ISite"
+      permission="zope.View" />
+    <require
+      set_schema="..interfaces.ISite"
+      permission="zope.ManageContent" />
+  </class>
+
+  <browser:addMenuItem
+    title="Site"
+    description="Site"
+    class="..site.Site"
+    for="*"
+    permission="zope.ManageContent" />
+
+  <browser:page name="index.html"
+    for="..interfaces.ISite"
+    class=".browser.SiteView"
+    template="index.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:page name="sitemapindex.xml"
+    for="..interfaces.ISite"
+    class=".browser.SiteView"
+    template="sitemapindex.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:page name="sitemap.xml"
+    for="..interfaces.ISite"
+    class=".browser.SiteView"
+    template="sitemap.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:page name="robots.txt"
+    for="..interfaces.ISite"
+    template="robots.pt"
+    layer="stiamro.skins.interfaces.IStiamLayer"
+    permission="zope.View"
+  />
+
+  <browser:icon
+    name="zmi_icon"
+    for="..interfaces.ISite"
+    file="icon.gif"
+  />
+
+</configure>

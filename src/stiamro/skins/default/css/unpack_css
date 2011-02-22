@@ -1,0 +1,2 @@
+#!/bin/sh
+cat jqtool.css stiam.css games.css > stiam.pack.css

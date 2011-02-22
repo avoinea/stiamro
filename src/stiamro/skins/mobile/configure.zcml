@@ -1,0 +1,19 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser">
+
+  <interface interface=".interfaces.IMobileLayer" name="mobile"
+    type="zope.publisher.interfaces.browser.IBrowserSkinType" />
+
+  <!-- Head -->
+  <browser:viewlet
+    name="head"
+    for="*"
+    class="stiamro.skins.default.app.head.HeadViewlet"
+    manager="stiamro.skins.default.interfaces.IHead"
+    template="zpt/head.pt"
+    layer=".interfaces.IMobileLayer"
+    permission="zope.View"
+  />
+
+</configure>

@@ -1,0 +1,59 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           i18n_domain="stiamro">
+
+  <include package="zope.security" file="meta.zcml" />
+  <include package="zope.app.zcmlfiles" file="meta.zcml" />
+
+  <include package="zope.publisher" />
+  <include package="zope.traversing" />
+  <include package="zope.traversing.browser" />
+  <include package="zope.app.zcmlfiles" />
+
+  <!-- The following packages aren't needed from the beginning, but
+       end up being used in most applications -->
+  <include package="zope.i18n" file="meta.zcml" />
+  <include package="zope.annotation" />
+  <include package="zope.copypastemove" />
+  <include package="zope.formlib" />
+  <include package="zope.i18n.locales" />
+  <include package="zope.app.authentication" />
+  <include package="zope.app.session" />
+  <include package="zope.intid" />
+  <include package="zope.keyreference" />
+  <include package="zope.app.catalog" />
+
+  <!-- Add your own component registrations here -->
+  <include file="security.zcml" />
+  <include package="zope.app.server" />
+  <include package="zope.app.file" />
+  <include package="zope.viewlet" file="meta.zcml" />
+  <include package="zope.contentprovider" />
+  <include package="z3c.layer.minimal" />
+  <include package="lovely.memcached" />
+  <include package="lovely.remotetask" />
+  <include package="z3c.blobfile" />
+
+  <!-- Allen public packages -->
+  <include package="allen.content.core" />
+  <include package="allen.content.section" />
+  <include package="allen.content.games" />
+  <include package="allen.content.jokes" />
+  <include package="allen.image.scale" />
+  <include package="allen.catalog.timeline" />
+
+  <include package=".skins" />
+  <include package=".content" />
+  <include package=".syndication" />
+  <include package=".portlets" />
+  <include package=".manage" />
+  <include package=".errors" />
+  <include package=".catalog" />
+  <include package=".generations" />
+  <include package=".utils" />
+  <include package=".google" />
+  <include package=".xml" />
+  <include package=".partners" />
+
+  <includeOverrides package="z3c.blobfile" file="overrides.zcml" />
+  <includeOverrides package=".skins.default" file="overrides.zcml" />
+</configure>

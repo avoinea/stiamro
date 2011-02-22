@@ -1,0 +1,10 @@
+<div class="breadcrumbs">
+  <ul tal:define="items python:view.items">
+    <li tal:content="string:Te afli aici: "/>
+    <li tal:repeat="item items">
+      <span tal:content="structure string:&raquo" />
+      <a tal:attributes="href item/url; title item/title"
+        tal:content="item/title" />
+    </li>
+  </ul>
+</div>

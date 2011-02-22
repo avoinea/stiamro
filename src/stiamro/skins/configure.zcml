@@ -1,0 +1,8 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           i18n_domain="stiamro">
+
+  <include package=".default" />
+  <include package=".mobile" />
+  <include package=".manage" />
+
+</configure>
