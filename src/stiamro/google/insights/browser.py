@@ -39,7 +39,20 @@ class View(BrowserPage):
     def keywords(self):
         report = self.report.items()
         report.sort()
-        return [item[0] for index, item in report]
+        keywords = [item[0] for index, item in report]
+
+        try:
+            hot = open('/var/local/edw/stiam/www/var/stiamro.hot', 'r')
+        except Exception:
+            return keywords
+        else:
+            tags = hot.read()
+            hot.close()
+
+        tags = tags.splitlines()
+        tags = [tag.strip() for tag in tags if tag.strip()]
+        tags.extend(key for key in keywords if key not in tags)
+        return tags
 
     @property
     def etag(self):
